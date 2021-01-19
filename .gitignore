@@ -1,0 +1,11 @@
+node_modules
+.vscode/
+settings.json
+.idea/
+.html/
+html
+package-lock.json
+ecosystem.config.js
+avatars
+tmp-avatars
+dist
