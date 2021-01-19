@@ -3,7 +3,24 @@
   "extends": ["tslint:recommended"],
   "jsRules": {},
   "rules": {
-    "no-console": false
+    "max-line-length": false,
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": {
+          "objects": "ignore"
+        }
+      }
+    ],
+    "ordered-imports": {
+      "options": [
+        {
+          "import-sources-order": "any"
+        }
+      ]
+    }
   },
   "rulesDirectory": []
 }
