@@ -8,6 +8,7 @@ import { IFileReaderService } from "../service/file-reader/file-reader.interface
 import { FileReader } from "../service/file-reader/file-reader";
 import { Server } from "../server";
 import { GeoLoaderService } from "../service/geo-loader/geo-loader";
+import { Repository } from "../service/repository/repository";
 
 export const diContainer = new Container();
 
@@ -23,3 +24,5 @@ diContainer
   .bind(TYPES.GeoLoaderService)
   .to(GeoLoaderService)
   .inSingletonScope();
+
+diContainer.bind(TYPES.Repository).to(Repository);
