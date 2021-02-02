@@ -1,5 +1,5 @@
 {
-  "name": "geo-json-example",
+  "name": "node-typescript",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -14,21 +14,18 @@
     "inversify": "5.0.5",
     "inversify-express-utils": "^6.3.2",
     "mocha": "^8.2.1",
-    "moment": "^2.29.1",
+    "moment": "2.29.1",
     "pino": "6.8.0",
     "reflect-metadata": "0.1.13",
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@types/node": "12.12.18",
     "@types/mocha": "^8.2.0",
-    "@types/sinon": "^9.0.10",
-    "@types/supertest": "^2.0.10",
-    "@types/validator": "^13.1.2",
+    "@types/node": "12.12.18",
+    "@types/pino": "^6.3.5",
     "nodemon": "2.0.6",
+    "pino-pretty": "^4.3.0",
     "prettier": "2.2.1",
-    "sinon": "^9.2.3",
-    "supertest": "^6.0.1",
     "ts-node": "9.1.1",
     "tslint": "5.11.0",
     "typescript": "3.5.3"
