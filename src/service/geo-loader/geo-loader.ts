@@ -28,7 +28,7 @@ export class GeoLoaderService implements IGeoLoaderService {
         });
         const osm = res.data[0].osm_id;
         if (osm) {
-          this.logger.log("Got OSM for", city);
+          this.logger.log("Got OSM:", osm, "for", city);
           result.push(osm);
         }
       } catch (e) {
@@ -45,13 +45,15 @@ export class GeoLoaderService implements IGeoLoaderService {
     for (const osm of osms) {
       try {
         this.logger.log("Get GeoJson for:", osm);
-        const url = encodeURI(` http:polygons.openstreetmap.fr/?id=${osm}`);
+        const url = encodeURI(
+          `http://polygons.openstreetmap.fr/get_geojson.py?id=${osm}&params=0`
+        );
         const res = await axios({
           method: "get",
           url: url,
           responseType: "json",
         });
-        const gson = res.data[0].osm_id;
+        const gson = res.data;
         if (gson) {
           this.logger.log("Got GeoJson for", osm);
           result.push(gson);
