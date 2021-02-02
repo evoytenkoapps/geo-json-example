@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "inversify": "5.0.5",
     "inversify-express-utils": "^6.3.2",
     "mocha": "^8.2.1",

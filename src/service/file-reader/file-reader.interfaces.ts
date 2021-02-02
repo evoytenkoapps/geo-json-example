@@ -1,3 +1,3 @@
 export interface IFileReaderService {
-  read(pathToFile: string);
+  read(pathToFile: string): string[];
 }

@@ -7,6 +7,7 @@ import { ILogger } from "../service/logger/logger.interface";
 import { IFileReaderService } from "../service/file-reader/file-reader.interfaces";
 import { FileReader } from "../service/file-reader/file-reader";
 import { Server } from "../server";
+import { GeoLoaderService } from "../service/get-loader/geo-loader";
 
 export const diContainer = new Container();
 
@@ -17,3 +18,8 @@ diContainer
   .inSingletonScope();
 
 diContainer.bind(TYPES.Server).to(Server).inSingletonScope();
+
+diContainer
+  .bind(TYPES.GeoLoaderService)
+  .to(GeoLoaderService)
+  .inSingletonScope();
