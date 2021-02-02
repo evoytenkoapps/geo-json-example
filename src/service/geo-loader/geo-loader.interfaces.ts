@@ -1,3 +1,3 @@
 export interface IGeoLoaderService {
-  loadGsons(cities: string[]): Promise<Object[]>;
+  loadGsons(cities: string[]): Promise<object[]>;
 }

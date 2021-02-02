@@ -8,10 +8,9 @@ import { TYPES } from "../../di/di-types";
 export class GeoLoaderService implements IGeoLoaderService {
   constructor(@inject(TYPES.Logger) private readonly logger: ILogger) {}
 
-  public async loadGsons(cities: string[]): Promise<Object[]> {
+  public async loadGsons(cities: string[]): Promise<object[]> {
     const osms: number[] = await this.getOsms(cities);
-    const gsons = await this.getGsons(osms);
-    return gsons;
+    return await this.getGsons(osms);
   }
 
   private async getOsms(cities: string[]): Promise<number[]> {
@@ -29,7 +28,7 @@ export class GeoLoaderService implements IGeoLoaderService {
         });
         const osm = res.data[0].osm_id;
         if (osm) {
-          this.logger.log("Get OSM for", city);
+          this.logger.log("Got OSM for", city);
           result.push(osm);
         }
       } catch (e) {
@@ -37,12 +36,12 @@ export class GeoLoaderService implements IGeoLoaderService {
         return [];
       }
     }
-    this.logger.log("Get total ", result.length, "osms");
+    this.logger.log("Got total ", result.length, "osms");
     return result;
   }
 
-  private async getGsons(osms: number[]): Promise<Object[]> {
-    const result: Object[] = [];
+  private async getGsons(osms: number[]): Promise<object[]> {
+    const result: object[] = [];
     for (const osm of osms) {
       try {
         this.logger.log("Get GeoJson for:", osm);
@@ -53,16 +52,16 @@ export class GeoLoaderService implements IGeoLoaderService {
           responseType: "json",
         });
         const gson = res.data[0].osm_id;
-        if (osm) {
+        if (gson) {
           this.logger.log("Got GeoJson for", osm);
-          result.push(osm);
+          result.push(gson);
         }
       } catch (e) {
         this.logger.error(e, "Cant get GeoJson for:", osm);
         return [];
       }
     }
-    this.logger.log("Get total ", result.length, "osms");
+    this.logger.log("Got total ", result.length, "osms");
     return result;
   }
 }
