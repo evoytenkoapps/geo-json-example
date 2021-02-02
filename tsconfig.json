@@ -13,6 +13,5 @@
     "declaration": true,
     "removeComments": true,
     "allowSyntheticDefaultImports": true
-  },
-  "exclude": ["node_modules"]
+  }
 }
