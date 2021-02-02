@@ -18,6 +18,6 @@ export class Server {
     const cities = this.fileReaderService.read(
       __dirname + "/assets/cities.txt"
     );
-    await this.geoLoaderService.load(cities);
+    await this.geoLoaderService.loadGsons(cities);
   }
 }

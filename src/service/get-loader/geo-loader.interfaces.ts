@@ -1,3 +1,3 @@
 export interface IGeoLoaderService {
-  load(cities: string[]): Promise<void>;
+  loadGsons(cities: string[]): Promise<void>;
 }
