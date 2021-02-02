@@ -8,7 +8,7 @@ import { IRepository } from "./service/repository/repository,interface";
 export class Server {
   constructor(
     @inject(TYPES.Logger) private readonly logger: ILogger,
-    @inject(TYPES.FileReader)
+    @inject(TYPES.Repository)
     private readonly repository: IRepository,
     @inject(TYPES.GeoLoaderService)
     private readonly geoLoaderService: IGeoLoaderService
@@ -16,6 +16,7 @@ export class Server {
 
   public async getData() {
     const cities = await this.repository.getCities();
-    await this.geoLoaderService.loadGsons(cities);
+    const gson = await this.geoLoaderService.loadGsons(cities);
+    return await this.repository.saveCities(gson);
   }
 }

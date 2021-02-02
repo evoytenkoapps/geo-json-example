@@ -11,6 +11,13 @@ export class Repository implements IRepository {
   ) {}
 
   public async getCities(): Promise<string[]> {
-    return this.fileReaderService.read(__dirname + "/assets/cities.txt");
+    return this.fileReaderService.read(__dirname + "/../../assets/in/cities.txt");
+  }
+
+  public async saveCities(cities: object[]): Promise<void> {
+    return this.fileReaderService.write(
+      cities,
+      __dirname + "/../../assets/out/gson.json"
+    );
   }
 }

@@ -15,4 +15,17 @@ export class FileReader implements IFileReaderService {
     this.logger.log("Loaded file length", file.length);
     return file;
   }
+
+  public async write(data: any, pathToFile: any): Promise<void> {
+    const self = this;
+    fs.writeFile(pathToFile, data, "utf8", function (err) {
+      if (err) {
+        return self.logger.log(
+          "An error occured while writing JSON Object to File."
+        );
+      }
+
+      self.logger.log("JSON file has been saved.");
+    });
+  }
 }
