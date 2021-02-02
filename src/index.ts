@@ -4,6 +4,7 @@ import { TYPES } from "./di/di-types";
 import { Server } from "./server";
 
 const logger = diContainer.get<ILogger>(TYPES.Logger);
+logger.log("Server started");
 
 const server = diContainer.get<Server>(TYPES.Server);
 server.getData();
@@ -17,5 +18,3 @@ process.on("uncaughtException", (error: Error) => {
   logger.error("uncaughtException", error);
   process.exit(1);
 });
-
-logger.log("Server started");

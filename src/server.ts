@@ -12,6 +12,6 @@ export class Server {
   ) {}
 
   public getData() {
-    this.fileReaderService.read(__dirname + "assets/cities.txt");
+    this.fileReaderService.read(__dirname + "/assets/cities.txt");
   }
 }
