@@ -7,7 +7,7 @@ import { ILogger } from "../service/logger/logger.interface";
 import { IFileReaderService } from "../service/file-reader/file-reader.interfaces";
 import { FileReader } from "../service/file-reader/file-reader";
 import { Server } from "../server";
-import { GeoLoaderService } from "../service/get-loader/geo-loader";
+import { GeoLoaderService } from "../service/geo-loader/geo-loader";
 
 export const diContainer = new Container();
 

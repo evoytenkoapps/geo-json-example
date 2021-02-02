@@ -8,9 +8,10 @@ import { TYPES } from "../../di/di-types";
 export class GeoLoaderService implements IGeoLoaderService {
   constructor(@inject(TYPES.Logger) private readonly logger: ILogger) {}
 
-  public async loadGsons(cities: string[]): Promise<void> {
+  public async loadGsons(cities: string[]): Promise<Object[]> {
     const osms: number[] = await this.getOsms(cities);
     const gsons = await this.getGsons(osms);
+    return gsons;
   }
 
   private async getOsms(cities: string[]): Promise<number[]> {

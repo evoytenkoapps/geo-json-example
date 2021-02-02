@@ -2,7 +2,7 @@ import { inject, injectable } from "inversify";
 import { TYPES } from "./di/di-types";
 import { ILogger } from "./service/logger/logger.interface";
 import { IFileReaderService } from "./service/file-reader/file-reader.interfaces";
-import { IGeoLoaderService } from "./service/get-loader/geo-loader.interfaces";
+import { IGeoLoaderService } from "./service/geo-loader/geo-loader.interfaces";
 
 @injectable()
 export class Server {
